@@ -4,6 +4,7 @@ export default function Share(){
     return(
         <div className="share">
             <div className="shareWrapper">
+                
                 <div className="shareTop">
                     <img className="shareProfileImg" src="assets/person/img1.jpg" alt="" />
                     <input placeholder="What is in your mind?"

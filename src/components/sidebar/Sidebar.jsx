@@ -74,16 +74,16 @@ export default function Sidebar(){
                         <span className="sidebarFriendName">Lionel Messi</span>
                     </li>
                     <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img2.jpg" alt=""/>
-                        <span className="sidebarFriendName">Christiano Ronaldo</span>
+                        <img className="sidebarFriendImg" src="/assets/person/img9.jpg" alt=""/>
+                        <span className="sidebarFriendName">Narendra Modi</span>
                     </li>
                     <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img2.jpg" alt=""/>
-                        <span className="sidebarFriendName">Christiano Ronaldo</span>
+                        <img className="sidebarFriendImg" src="/assets/person/img10.jpg" alt=""/>
+                        <span className="sidebarFriendName">Shreya Ghosal</span>
                     </li>
                     <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img2.jpg" alt=""/>
-                        <span className="sidebarFriendName">Christiano Ronaldo</span>
+                        <img className="sidebarFriendImg" src="/assets/person/img11.jpg" alt=""/>
+                        <span className="sidebarFriendName">Amitabh Bachchan</span>
                     </li>
                 </ul>
             </div>
