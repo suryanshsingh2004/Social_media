@@ -1,4 +1,6 @@
 import "./topbar.css"
+import { Search,Person,Chat,Notifications } from "@mui/icons-material"
+// import Login from "./pages/login/Login";
 export default function Topbar() {
     return (
         <div className="topbarContainer">
@@ -7,7 +9,7 @@ export default function Topbar() {
             </div>
             <div className="topbarCentre">
                 <div className="searchbar">
-                    {/* <Search className="searchIcon" /> */}
+                    <Search className="searchIcon" />
                     <input placeholder="Search for friends,posts or videos" className="searchInput"/>
                     
                 </div>
@@ -16,18 +18,19 @@ export default function Topbar() {
                 <div className="topbarLinks">
                     <span className="topbarLink">Homepage</span>
                     <span className="topbarLink">Timeline</span>
+                    <span className="topbarLink">Login</span>
                 </div>
                 <div className="topbarIcons">
                     <div className="topbarIconItem">
-                        {/* <Person /> */}
+                        <Person />
                         <span className="topbarIconBadge">1</span>
                     </div>
                     <div className="topbarIconItem">
-                        {/* <Chat /> */}
+                        <Chat />
                         <span className="topbarIconBadge">2</span>
                     </div>
                     <div className="topbarIconItem">
-                        {/* <Notification /> */}
+                        <Notifications />
                         <span className="topbarIconBadge">1</span>
                     </div>
                 </div>
