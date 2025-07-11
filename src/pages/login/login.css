@@ -27,7 +27,7 @@
     font-size: 24px;
 }
 .loginBox{
-    height: 300px;
+    height: 380px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -55,7 +55,56 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+.loginButton:hover{
+    background-color: rgb(30, 70, 175);
+}
 .loginForgot{
     text-align: center;
     color: rgb(41, 41, 142);
+    cursor: pointer;
+}
+
+.loginForgot:hover{
+    text-decoration: underline;
+}
+
+.loginRegisterButton{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(42, 165, 42);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.loginRegisterButton:hover{
+    background-color: rgb(35, 140, 35);
+}
+
+.loginError{
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.loginRegisterLink{
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.loginRegisterText{
+    color: rgb(17, 98, 221);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.loginRegisterText:hover{
+    text-decoration: underline;
 }

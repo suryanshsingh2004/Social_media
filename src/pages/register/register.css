@@ -1,0 +1,154 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerWrapper{
+    width: 70%;
+    height: 80%;
+    display: flex;
+}
+
+.registerLeft, .registerRight{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registerLogo{
+    font-size: 50px;
+    font-weight: 800;
+    color: rgb(17, 98, 221);
+    margin-bottom: 10px;
+}
+
+.registerDesc{
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.registerBox{
+    height: 450px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.registerTitle{
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: rgb(17, 98, 221);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.registerNameRow{
+    display: flex;
+    gap: 10px;
+}
+
+.registerInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.registerInputHalf{
+    flex: 1;
+}
+
+.registerInput:focus{
+    outline: none;
+    border-color: rgb(17, 98, 221);
+}
+
+.registerButton{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(42, 165, 42);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.registerButton:hover{
+    background-color: rgb(35, 140, 35);
+}
+
+.registerError{
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.registerSuccess{
+    color: green;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.registerLoginLink{
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.registerLoginText{
+    color: rgb(17, 98, 221);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.registerLoginText:hover{
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .registerWrapper{
+        width: 90%;
+        height: 90%;
+        flex-direction: column;
+    }
+    
+    .registerLeft{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .registerLogo{
+        font-size: 36px;
+    }
+    
+    .registerDesc{
+        font-size: 18px;
+    }
+    
+    .registerBox{
+        height: auto;
+        padding: 15px;
+    }
+    
+    .registerNameRow{
+        flex-direction: column;
+        gap: 0;
+    }
+}

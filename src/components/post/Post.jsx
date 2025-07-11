@@ -2,6 +2,7 @@ import "./post.css"
 import { MoreVert } from "@mui/icons-material";
 import { Users } from "../../dummyData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Post({post}){
     const [like,setLike] = useState(post.like)
@@ -15,8 +16,10 @@ export default function Post({post}){
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img className="postProfileImg" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt=""/>
-                        <span className="postUsername">{Users.filter(u=>u.id === post.userId)[0].username}</span>
+                        <Link to={`/profile/${post.userId}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                            <img className="postProfileImg" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt=""/>
+                            <span className="postUsername">{Users.filter(u=>u.id === post.userId)[0].username}</span>
+                        </Link>
                         <span className="postDate">{post?.date}</span>
                     </div>
                     <div className="postTopRight">
@@ -29,8 +32,8 @@ export default function Post({post}){
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img className="likeIcon" src="assets/like.png" onClick={likeHandler} alt=""/>
-                        <img className="likeIcon" src="assets/heart.png" onClick={likeHandler} alt=""/>
+                        <img className="likeIcon" src="/assets/like.png" onClick={likeHandler} alt=""/>
+                        <img className="likeIcon" src="/assets/heart.png" onClick={likeHandler} alt=""/>
                         <span className="postLikeCounter">{like} people liked it</span>
 
                     </div>

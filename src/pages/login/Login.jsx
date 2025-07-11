@@ -1,59 +1,6 @@
-// // import "./login.css"
-// // export default function Login() {
-// //     return(
-// //         <div className="login">
-// //             <div className="loginWrapper">
-// //                 <div className="loginLeft">
-// //                     <h3 className="loginLogo">SocialMediaMP88</h3>
-// //                     <span className="loginDesc">Connect with friends and the world around you.</span>
-// //                 </div>
-// //                 <div className="loginRight">
-// //                     <div className="loginBox">
-// //                         <input placeholder="Email" className="loginInput"/>
-// //                         <input placeholder="Password" className="loginInput"/>
-// //                         <button className="loginButton">Log In</button>
-// //                         <span className="loginForgot">Forgot Password?</span>
-// //                         {/* <button className="loginRegisterButton">Create a New Password</button> */}
-
-// //                     </div>
-// //                 </div>
-// //             </div>
-// //         </div>
-// //     )
-// // }
-// import "./login.css";
-// import { useNavigate } from "react-router-dom";
-
-// export default function Login() {
-//   const navigate = useNavigate(); // Hook to navigate programmatically
-
-//   const handleLogin = () => {
-//     // Perform login validation or authentication logic here if needed
-//     navigate("/profile"); // Navigate to the Profile page
-//   };
-
-//   return (
-//     <div className="login">
-//       <div className="loginWrapper">
-//         <div className="loginLeft">
-//           <h3 className="loginLogo">SocialMediaMP88</h3>
-//           <span className="loginDesc">Connect with friends and the world around you.</span>
-//         </div>
-//         <div className="loginRight">
-//           <div className="loginBox">
-//             <input placeholder="Email" className="loginInput" />
-//             <input placeholder="Password" className="loginInput" />
-//             <button className="loginButton" onClick={handleLogin}>Log In</button>
-//             <span className="loginForgot">Forgot Password?</span>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 import "./login.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate(); // Hook to navigate programmatically
@@ -71,10 +18,23 @@ export default function Login() {
     // Simulate authentication (replace with real logic later)
     if (email === "ss" && password === "123") {
       setError(""); // Clear error
-      navigate("/profile"); // Navigate to the Profile page
+      navigate("/"); // Navigate to the Homepage
     } else {
       setError("Invalid email or password.");
     }
+  };
+
+  // Handle Enter key press
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  };
+
+  // Handle Create Account
+  const handleCreateAccount = () => {
+    // Navigate to registration page
+    navigate("/register");
   };
 
   return (
@@ -91,6 +51,7 @@ export default function Login() {
               className="loginInput"
               value={email}
               onChange={(e) => setEmail(e.target.value)} // Update email state
+              onKeyDown={handleKeyDown} // Handle Enter key
             />
             <input
               type="password"
@@ -98,12 +59,19 @@ export default function Login() {
               className="loginInput"
               value={password}
               onChange={(e) => setPassword(e.target.value)} // Update password state
+              onKeyDown={handleKeyDown} // Handle Enter key
             />
             {error && <span className="loginError">{error}</span>} {/* Display error message */}
             <button className="loginButton" onClick={handleLogin}>
               Log In
             </button>
             <span className="loginForgot">Forgot Password?</span>
+            <button className="loginRegisterButton" onClick={handleCreateAccount}>
+              Create Account
+            </button>
+            <div className="loginRegisterLink">
+              Don't have an account? <Link to="/register" className="loginRegisterText">Sign Up</Link>
+            </div>
           </div>
         </div>
       </div>

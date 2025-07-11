@@ -1,19 +1,19 @@
 import "./rightbar.css"
 import {Users} from "../../dummyData";
 import Online from "../../components/online/Online";
-// import Home from "./pages/home/Home";
+import { Link } from "react-router-dom";
 
 export default function Rightbar(profile){
     const HomeRightbar = () => {
         return(
             <>
             <div className="birthdayContainer">
-                <img className="birthdayImg" src="assets/gift.png" alt="" />
+                <img className="birthdayImg" src="/assets/gift.png" alt="" />
                 <span className="birthdayText">
                     <b>Virat Kohli</b> and <b> 3 other friends</b> have birthday today.
                 </span>
             </div>
-            <img className="rightbarAd" src="assets/ad.png" alt=""/>
+            <img className="rightbarAd" src="/assets/ad.png" alt=""/>
             <h4 className="rightbarTitle">Online Friends</h4>
             <ul className="rightbarFriendList">
                 {Users.map((u) => (
@@ -43,30 +43,14 @@ export default function Rightbar(profile){
             </div>
             <h4 className="rightbarTitle">User Friends</h4>
             <div className="rightbarFollowings">
-                <div className="rightbarFollowing">
-                    <img src="assets/person/img4.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Mahendra Singh Dhoni</span>
-                </div>
-                <div className="rightbarFollowing">
-                    <img src="assets/person/img7.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Tom Cruise</span>
-                </div>
-                <div className="rightbarFollowing">
-                    <img src="assets/person/img6.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Salmaan Khan</span>
-                </div>
-                <div className="rightbarFollowing">
-                    <img src="assets/person/img3.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Rohit Sharma</span>
-                </div>
-               <div className="rightbarFollowing">
-                    <img src="assets/person/img2.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Christiano Ronaldo</span>
-                </div>
-                <div className="rightbarFollowing">
-                    <img src="assets/person/img9.jpg" alt="" className="rightbarFollowingImg"/>
-                    <span className="rightbarFollowingName">Narendra Modi</span>
-                </div>
+                {Users.slice(1, 7).map((user) => (
+                    <div key={user.id} className="rightbarFollowing">
+                        <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <img src={user.profilePicture} alt="" className="rightbarFollowingImg"/>
+                            <span className="rightbarFollowingName">{user.username}</span>
+                        </Link>
+                    </div>
+                ))}
             </div>
             </>
         )

@@ -5,8 +5,9 @@
     background-color: limegreen;
     position: absolute;
     top: -2px;
-    right: 0;
+    right: -2px;
     border: 2px solid white;
+    z-index: 1;
 }
 .rightbarUsername{
     font-weight: 500;

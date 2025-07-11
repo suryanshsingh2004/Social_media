@@ -1,5 +1,8 @@
 import "./sidebar.css"
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { Users } from "../../dummyData";
+
 export default function Sidebar(){
     return(
         <div className="sidebar">
@@ -45,46 +48,14 @@ export default function Sidebar(){
                 <button className="sidebarButton">Show More</button>
                 <hr className="sidebarHr"/>
                 <ul className="sidebarFriendList">
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img2.jpg" alt=""/>
-                        <span className="sidebarFriendName">Christiano Ronaldo</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img3.jpg" alt=""/>
-                        <span className="sidebarFriendName">Rohit Sharma</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img4.jpg" alt=""/>
-                        <span className="sidebarFriendName">Mahendra Singh Dhoni</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img5.jpg" alt=""/>
-                        <span className="sidebarFriendName">Shahrukh Khan</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img6.jpg" alt=""/>
-                        <span className="sidebarFriendName">Salmaan Khan</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img7.jpg" alt=""/>
-                        <span className="sidebarFriendName">Tom Cruise</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img8.jpg" alt=""/>
-                        <span className="sidebarFriendName">Lionel Messi</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img9.jpg" alt=""/>
-                        <span className="sidebarFriendName">Narendra Modi</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img10.jpg" alt=""/>
-                        <span className="sidebarFriendName">Shreya Ghosal</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img className="sidebarFriendImg" src="/assets/person/img11.jpg" alt=""/>
-                        <span className="sidebarFriendName">Amitabh Bachchan</span>
-                    </li>
+                    {Users.slice(1, 10).map((user) => (
+                        <li key={user.id} className="sidebarFriend">
+                            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                                <img className="sidebarFriendImg" src={user.profilePicture} alt=""/>
+                                <span className="sidebarFriendName">{user.username}</span>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
         
