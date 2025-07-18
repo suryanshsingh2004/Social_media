@@ -31,10 +31,9 @@ export default function Login() {
     }
   };
 
-  // Handle Create Account
   const handleCreateAccount = () => {
-    // Navigate to registration page
-    navigate("/register");
+
+    navigate("/");
   };
 
   return (
@@ -70,7 +69,7 @@ export default function Login() {
               Create Account
             </button>
             <div className="loginRegisterLink">
-              Don't have an account? <Link to="/register" className="loginRegisterText">Sign Up</Link>
+              Don't have an account? <Link to="/" className="loginRegisterText">Go to Homepage</Link>
             </div>
           </div>
         </div>
@@ -78,4 +77,3 @@ export default function Login() {
     </div>
   );
 }
-
