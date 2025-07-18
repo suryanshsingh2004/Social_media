@@ -1,154 +1,240 @@
-.register{
-    width: 100vw;
-    height: 100vh;
-    background-color: aliceblue;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* .register-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #1e2a38;
+    border-radius: 8px;
+    overflow: hidden;
+  } */
+  .register-container {
+    display: flex;
+    flex-direction: column; /* Make it stack vertically by default */
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #1e2a38;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .register-left {
+    flex: 1;
+    background-color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .image-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .slogan {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .register-right {
+    flex: 2;
+    padding: 40px;
+    background-color: #ffffff;
+    color: #1e2a38;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  .login-link {
+    font-size: 14px;
+  }
+  
+  .login-link a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .form-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* .input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+   */
+
+   .input-group {
+    display: flex;
+    flex-direction: column; /* Make inputs stack on smaller screens */
+    margin-bottom: 15px;
+   }
+
+
+  /* input {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  } */
+  input {
+    margin-bottom: 10px; /* Add spacing between stacked inputs */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  input:first-child {
+    margin-left: 0;
+  }
+  
+  input:last-child {
+    margin-right: 0;
+  }
+  
+  .terms {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.registerWrapper{
-    width: 70%;
-    height: 80%;
-    display: flex;
-}
-
-.registerLeft, .registerRight{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.registerLogo{
-    font-size: 50px;
-    font-weight: 800;
-    color: rgb(17, 98, 221);
-    margin-bottom: 10px;
-}
-
-.registerDesc{
-    font-size: 24px;
-    line-height: 1.4;
-}
-
-.registerBox{
-    height: 450px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.registerTitle{
-    margin: 0 0 20px 0;
-    text-align: center;
-    color: rgb(17, 98, 221);
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.registerNameRow{
-    display: flex;
-    gap: 10px;
-}
-
-.registerInput{
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid gray;
-    font-size: 18px;
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.registerInputHalf{
-    flex: 1;
-}
-
-.registerInput:focus{
-    outline: none;
-    border-color: rgb(17, 98, 221);
-}
-
-.registerButton{
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(42, 165, 42);
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.registerButton:hover{
-    background-color: rgb(35, 140, 35);
-}
-
-.registerError{
-    color: red;
-    text-align: center;
+    margin-bottom: 20px;
     font-size: 14px;
-    margin: 5px 0;
-}
-
-.registerSuccess{
-    color: green;
-    text-align: center;
-    font-size: 14px;
-    margin: 5px 0;
-    font-weight: 500;
-}
-
-.registerLoginLink{
-    text-align: center;
-    margin-top: 15px;
-    color: #666;
-    font-size: 14px;
-}
-
-.registerLoginText{
-    color: rgb(17, 98, 221);
+  }
+  
+  .terms input {
+    margin-right: 10px;
+  }
+  
+  .terms a {
+    color: #3498db;
     text-decoration: none;
-    font-weight: 500;
-}
+  }
+  
+  .create-account-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .create-account-btn:hover {
+    background-color: #d35400;
+  }
+  
+  /* .social-signup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  } */
+  .social-signup {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+  
+  .facebook-btn,
+  .twitter-btn {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .facebook-btn {
+    background-color: #3b5998;
+  }
+  
+  .twitter-btn {
+    background-color: #1da1f2;
+  }
+  
+  footer {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+  }
 
-.registerLoginText:hover{
-    text-decoration: underline;
-}
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .registerWrapper{
-        width: 90%;
-        height: 90%;
-        flex-direction: column;
+  @media (min-width: 768px) {
+    .register-container {
+      flex-direction: row; /* Side-by-side layout for larger screens */
     }
-    
-    .registerLeft{
-        text-align: center;
-        margin-bottom: 20px;
+  
+    .register-left {
+      flex: 1;
+      padding: 40px;
     }
-    
-    .registerLogo{
-        font-size: 36px;
+  
+    .register-right {
+      flex: 2;
+      padding: 40px;
     }
-    
-    .registerDesc{
-        font-size: 18px;
+  
+    .input-group {
+      flex-direction: row; /* Place inputs side by side */
     }
-    
-    .registerBox{
-        height: auto;
-        padding: 15px;
+  
+    input {
+      margin: 0 10px;
     }
-    
-    .registerNameRow{
-        flex-direction: column;
-        gap: 0;
+  
+    input:first-child {
+      margin-left: 0;
     }
-}
+  
+    input:last-child {
+      margin-right: 0;
+    }
+  
+    .social-signup {
+      flex-direction: row; /* Place buttons side by side */
+      gap: 10px;
+    }
+  }
+  
